@@ -1,0 +1,759 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font size (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+1rem = 16px
+
+- Font weights:
+Default: 400  
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights: 
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing:
+-0.5px
+0.75px
+
+
+--- 02 COLORS
+- Primary:  #e67e22
+
+- Tints: 
+#fdf2e9
+#fae5d3
+- Shades:
+ #cf711f
+ #45260a
+- Accents:
+- Greys
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+
+--- 05 SHADOWS
+ box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075)
+
+--- 06 BORDER-RADIUS
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+ */
+/* default setting */
+/* 01 TYPOGRAPHY SYSTEM 
+
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* set to 10 px for easily calculate size in rem units */
+html {
+  /*10px / 16px = 0.625 = 62.5%*/
+  /* Percentage of user's  browser font-size setting */
+  font-size: 62.5%;
+}
+
+body {
+  /* If inter fonts was failed, sans  serif would be used */
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+/* HEADER */
+.logo {
+  height: 32px;
+}
+
+/* Title Nav bar */
+/* đăng nhập */
+
+.active {
+  color: #56ad6c !important;
+}
+
+.right-title a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: auto;
+}
+
+.language {
+  font-weight: 600;
+  margin: 0 1.2rem;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.shopping-cart-border {
+  display: inline-block;
+  color: rgb(4, 50, 78);
+  padding: 0.5rem 0.9rem;
+  border: 0.1rem solid rgb(78, 108, 163);
+  border-radius: 0.2rem;
+}
+
+.title-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 30rem;
+  border-bottom: 0.1rem solid lightgrey;
+}
+/* Nav bar */
+.main-nav {
+  border-bottom: 0.1rem solid lightgrey;
+}
+
+/* effect when hover nav bar */
+.main-nav-list li {
+  display: inline-block;
+  position: relative;
+}
+.main-nav-list li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #009688;
+  position: absolute;
+  left: 0rem;
+  bottom: -10px;
+  transition: width 0.5s;
+}
+.main-nav-list li a:hover {
+  color: #009688;
+}
+.main-nav-list li:hover::after {
+  width: 100%;
+}
+
+/* code nav list */
+.main-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  list-style: none;
+}
+
+.main-nav-list a {
+  text-decoration: none;
+  color: rgb(10, 71, 78);
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Hero section */
+.hero-section {
+  background-color: #fdf2e9;
+}
+
+.hero {
+  /* to center this hero use margin 0 auto */
+  margin: 0 auto;
+  max-width: 130rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.hero-heading-primary {
+  font-size: 5.2rem;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+  font-weight: 1000;
+  margin-bottom: 2rem;
+}
+
+.hero-paragraph {
+  font-size: 1.6rem;
+  margin-bottom: 4.8rem;
+  line-height: 1.6;
+}
+
+.hero-img-box {
+  padding-left: 9.6rem;
+}
+
+.hero-img {
+  width: 100%;
+  padding-bottom: 9.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 2.4rem 2.4rem;
+  margin-right: 4.2rem;
+  border-radius: 50px;
+  /*transition property: choose property to add effect and
+  specify time for this effection
+  */
+  transition: background-color 0.4s;
+}
+
+.btn.btn-order:link,
+.btn.btn-order:visited {
+  background-color: #339af0;
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn.btn-order:hover,
+.btn.btn-order:active {
+  background-color: #e67e22;
+}
+
+.btn.btn-learn-more:link,
+.btn.btn-learn-more:visited {
+  background-color: #fff;
+  color: black;
+}
+
+.btn.btn-learn-more:hover {
+  background-color: transparent;
+  border: 3px solid #fff;
+}
+
+.hero-customers {
+  display: flex;
+  margin-top: 4.8rem;
+  align-items: center;
+  gap: 4.2rem;
+}
+/* to set create space between product-sale and customer-photo.
+There are 2 ways */
+/* method 1 is using gap property above (gap = 4.2rem) 
+*/
+/* method 2: reset margin-right to 0
+.customer-photo:last-child {
+  margin-right: 0;
+} */
+.product-sale {
+  font-size: 1.6rem;
+}
+.customer-photo {
+  height: 5.4rem;
+  width: 5.4rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 0.3rem solid #fff;
+}
+
+.product-sale span {
+  color: red;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Feature section */
+
+.feature-container {
+  margin-bottom: 2.4rem;
+}
+
+.feature-heading {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: grey;
+  padding: 2.8rem 0;
+  text-align: center;
+}
+
+.sponsor-logos img {
+  height: 3.2rem;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+/* Introduction section */
+.introduction-section {
+  margin-top: 6.8rem;
+}
+.introduction-section h3 {
+  padding-top: 1.2rem;
+  font-size: 4.2rem;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #e67e22;
+  letter-spacing: 0.2rem;
+  font-style: italic;
+}
+
+.introduction-section .container {
+  border: 0.4rem solid #ffc078;
+  margin: 2rem 24rem;
+  border-radius: 4rem;
+}
+
+.introduction-section .container .intro-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: 4rem;
+  row-gap: 4rem;
+  padding: 3.6rem 3.6rem;
+}
+
+.img-description img {
+  width: 100%;
+  border-radius: 4rem;
+}
+
+.intro-container .description {
+  font-family: "Inter";
+  line-height: 1.4;
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 300;
+  gap: 2rem;
+}
+
+button.btn-more {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: inline-block;
+  border: 0.2rem solid #f59f00;
+  font-family: "Raleway";
+  padding: 0.2rem 0.6rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+span.specification.hidden {
+  display: none;
+}
+
+/* Sale Section */
+.sale-section h2 {
+  text-transform: uppercase;
+  font-size: 4.2rem;
+  text-align: center;
+  margin-top: 10rem;
+  font-style: italic;
+  color: #38a3a5;
+  font-family: "Raleway", sans-serif;
+}
+
+.sale-container {
+  max-width: 120rem;
+  margin: 2.4rem auto;
+  padding: 6.4rem 6.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 9.6rem;
+  border: 0.4rem solid #38a3a5;
+  border-radius: 4rem;
+  position: relative;
+}
+
+.product {
+  box-shadow: 0 1.8rem 4.8rem rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-1.2rem);
+}
+
+.product img {
+  width: 100%;
+}
+
+.product p {
+  text-align: center;
+}
+
+.product span.tag {
+  /* span is inline element , so margin only can be only applied 
+  horizontally, if we want to modify vertically we need to display
+  inline-block */
+  display: inline-block;
+  margin: 1.4rem 1.6rem;
+  padding: 0.4rem 0.4rem;
+  /* background-color: burlywood; */
+  color: #fff;
+  background-color: red;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.sale-section p {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: "Inter";
+  /* text-decoration: underline; */
+  text-transform: uppercase;
+}
+
+.product-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.4rem 2.4rem;
+}
+
+.product-attributes li {
+  font-size: 1.4rem;
+}
+
+.product-attribute {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.attribute-icon {
+  color: #2b8a3e;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.link-products {
+  margin-top: 3.2rem;
+}
+
+.link-products .product-link {
+  position: absolute;
+  font-size: 1.8rem;
+  text-decoration: underline;
+  color: #82c91e;
+  left: 38%;
+  font-weight: 2.4rem;
+  transition: all 0.4s;
+}
+
+.link-products .product-link:hover {
+  text-decoration: none;
+  color: #66a80f;
+}
+
+/* Testimonial section */
+
+.testimonial-section {
+  display: grid;
+  margin-top: 6.8rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1.6rem;
+  padding-left: 6.8rem;
+  /* background-color: #fff9db; */
+  background-color: #e7f5ff;
+  align-items: center;
+  gap: 5.2rem;
+}
+
+.testimonial-container span {
+  display: inline-block;
+  color: brown;
+  margin-bottom: 2.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.75px;
+}
+
+.testimonial-container h1 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 6.8rem;
+}
+
+.testimonial-img {
+  width: 8.4rem;
+  border-radius: 50%;
+}
+
+.testimonial-text {
+  margin-top: 2.4rem;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+.testimonial-name {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #666;
+}
+.testimonial-customers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5.8rem;
+  row-gap: 4.8rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.2);
+}
+
+/* Benefit section */
+
+.benefit-section {
+  padding: 2.4rem 3.6rem;
+}
+.benefit-section-text {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4.6rem 0rem 1.8rem;
+  text-align: center;
+  color: #22b8cf;
+}
+
+.benefit-container {
+  padding: 1.2rem 8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 0.2rem solid #22b8cf;
+  border-radius: 4rem;
+}
+
+.benefit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.benefit-icon {
+  height: 3.6rem;
+  width: 3.6rem;
+  color: #22b8cf;
+}
+
+.benefit-heading {
+  margin-top: 1.2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.benefit-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/*Call to action section */
+.cta {
+  padding: 6.8rem 12.8rem;
+  margin: 0rem auto;
+  max-width: 180rem;
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1.8rem 6.8rem rgba(0, 0, 0, 0.09);
+}
+
+.cta-text-box {
+  background-color: #e7f5ff;
+}
+
+.cta-text {
+  margin: 1.8rem 2.8rem;
+  padding: 1.8rem 2.8rem;
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.heading-cta {
+  font-size: 3.6rem;
+  padding-top: 4.8rem;
+  text-align: center;
+  color: #495057;
+  font-family: "Raleway";
+  color: #d9480f;
+}
+
+.cta-img-box img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.cta-img-box img:hover {
+  transform: scale(1.1);
+}
+
+.cta-btn {
+  border: none;
+}
+
+form.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 2.8rem;
+  padding: 3.8rem 4.8rem;
+}
+
+form.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+
+form.cta-form input,
+form.cta-form select {
+  width: 85%;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  /* default font family is not inherited from  from parent element so we need
+  to use css keyword 'inherit' */
+  font-family: inherit;
+  border: 0.2rem solid #fff;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form.cta-form button {
+  margin-top: 1.6rem;
+  font-size: 2rem;
+  font-weight: 600;
+  justify-self: start;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 1.2rem 6.4rem;
+  background-color: #d9480f;
+  color: #fff;
+  transition: all 0.4s;
+}
+
+form.cta-form button:hover {
+  border: 0.2rem solid #d9480f;
+  background-color: #fff;
+  color: #555;
+}
+
+/* Footer section */
+
+footer {
+  margin-top: 4.8rem;
+}
+
+footer div.information {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3rem;
+  border: 0.1rem solid lightgray;
+  /* background-color: rgb(238, 238, 238); */
+  background-color: #f8f9fa;
+}
+
+.information span hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.information span div {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+
+.information span a {
+  color: #555;
+  text-decoration: none;
+}
+
+.information .payment {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  gap: 2rem;
+}
+
+.information .social {
+  font-size: 1.6rem;
+}
+
+.information .social .heading {
+  display: flex;
+  justify-content: space-around;
+  gap: 2.8rem;
+}
+
+.information .social .social-content {
+  margin-top: 2.4rem;
+}
+.information .social .social-content .social-btn {
+  padding: 1.8rem;
+  font-size: 5vh;
+}
+
+.information .social .social-content .social-btn.facebook {
+  color: rgb(17, 77, 168);
+}
+
+.information .social .social-content .social-btn.instagram {
+  color: #bc1888;
+}
+.information .social .social-content .social-btn.youtube {
+  color: rgb(194, 9, 9);
+}
